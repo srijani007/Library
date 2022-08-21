@@ -10,7 +10,8 @@ const routes: Routes = [{path: 'signin-comp', component: SigninCompComponent},
  {path:'userDetails-comp',component:UserDetailsCompComponent},
   {path:'book-compo',component:BookCompoComponent},
 {path:'home-comp',component:HomeCompComponent},
-{path:'payment-comp',component:PaymentCompComponent}];
+{path:'payment-comp',component:PaymentCompComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

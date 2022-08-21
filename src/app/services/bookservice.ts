@@ -8,7 +8,8 @@ import { Book } from "../models/bookmodel";
 })
 export class BooksService{
     baseUrl ='https://localhost:7006/Book/AddBooks';
-    bookUrl ='https://localhost:7006/Book/GetBooks'
+    bookUrl ='https://localhost:7006/Book/GetBooks';
+    conditions ='https://localhost:7267/Reader/BasedonCriteria '
     constructor(private http: HttpClient){}
 
  //add Books 
@@ -25,5 +26,7 @@ export class BooksService{
   //Get all cards
   getAllBooks():Observable<Book[]>{
     return this.http.get<Book[]>(this.bookUrl);
+
+  
 }
 }

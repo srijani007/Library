@@ -11,7 +11,7 @@ import { HomeCompComponent } from './home-comp/home-comp.component';
 import { PaymentCompComponent } from './payment-comp/payment-comp.component';
 import { GetrecieptCompComponent } from './getreciept-comp/getreciept-comp.component';
 import { BooksearchCompComponent } from './booksearch-comp/booksearch-comp.component';
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +26,10 @@ import { BooksearchCompComponent } from './booksearch-comp/booksearch-comp.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule ,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    Ng2SearchPipeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
