@@ -1,0 +1,22 @@
+<html>
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Payment</h1>
+        <hr>
+
+        <label for="name"><b>BuyerName</b></label>
+        <input type="text" placeholder="Enter BuyerName" name="name" required [(ngModel)]="purchase.BuyerName" />
+
+        <label for="email"><b>BuyerEmail</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="purchase.BuyerEmail" />
+
+        <label for="bookid"><b>BookId</b></label>
+        <input type="text" placeholder="Enter BookId" name="bookid" required [(ngModel)]="purchase.BookId" />
+
+        <div class="clearfix">
+            <a (click)="onSubmit()" type="submit" class="btn btn-primary" href="/home-comp">Submit</a>
+        </div>
+    </div>
+</form>
+
+</html>

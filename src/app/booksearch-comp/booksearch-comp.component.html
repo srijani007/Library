@@ -1,0 +1,33 @@
+<html>
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Book Search</h1>
+        <hr>
+        <label for="Author"><b>AuthorName</b></label>
+        <input type="text" placeholder="Enter AuthorName" name="Author" required [(ngModel)]="conditions.AuthorName" />
+
+        <label for="price"><b>Price</b></label>
+        <input type="text" name="price" required [(ngModel)]="conditions.Price" />
+
+        <label for="category"><b>Categories</b></label>
+        <select name="category" id="category" [(ngModel)]="conditions.Category">
+            <option value="comic">Comic</option>
+            <option value="fiction">Fiction</option>
+            <option value="romance">Romance</option>
+            <option value="thriller">Thriller</option>
+            <option value="scific">Moral</option>
+            <option value="scific">Drama</option>
+            <option value="scific">Fantasy</option>
+            <option value="scific">Horror</option>
+            <option value="scific">Narrative</option>
+        </select>
+        <br>
+        <br>
+        <!-- <div class="clearfix">
+            <a (click)="onSubmit()" type="submit" class="btn btn-primary" >Search Book</a>
+        </div> -->
+
+    </div>
+</form>
+
+</html>

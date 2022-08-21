@@ -1,0 +1,19 @@
+<html>
+<form action="action_page.php" style="border:1px solid rgb(250, 185, 111)">
+    <div class="container">
+        <h1>Sign In</h1>
+        <hr>
+
+        <label for="name"><b>UserName</b></label>
+        <input type="text" placeholder="Enter UserName" name="name" required [(ngModel)]="cred.UserName" />
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="cred.UserPass" />
+
+        <div class="clearfix">
+          <a class="btn btn-primary"  role ="button" (click)="onSubmit()" type="submit"  >Sign In</a>
+        </div>
+    </div>
+</form>
+
+</html>

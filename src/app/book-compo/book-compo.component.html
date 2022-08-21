@@ -1,0 +1,42 @@
+<html>
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Books</h1>
+        <hr>
+
+        <label for="name"><b>Title</b></label>
+        <input type="text" placeholder="Enter BookName" name="name" required [(ngModel)]="book.title" />
+
+        <label for="Author"><b>AuthorName</b></label>
+        <input type="text" placeholder="Enter AuthorName" name="Author" required [(ngModel)]="book.AuthorName" />
+
+        <label for="publisher"><b>Publisher</b></label>
+        <input type="text" placeholder="Enter PublisherName" name="publisher" required [(ngModel)]="book.Publisher" />
+
+        <label for="price"><b>Price</b></label>
+        <input type="text" name="price" required [(ngModel)]="book.Price" />
+
+        <label for="content"><b>Content</b></label>
+        <input type="text" name="content" required [(ngModel)]="book.Content" />
+
+        <label for="img"><b>Image Url</b></label>
+        <input type="text" name="img" required [(ngModel)]="book.Logo" />
+
+        <label for="category"><b>Categories</b></label>
+        <select name="category" id="category" [(ngModel)]="book.Category">
+            <option value="comic">Comic</option>
+            <option value="fiction">Fiction</option>
+            <option value="romance">Romance</option>
+            <option value="thriller">Thriller</option>
+            <option value="scific">SciFic</option>
+        </select>
+        <br>
+        <br>
+        <div class="clearfix">
+            <a (click)="onSubmit()" type="submit" class="btn btn-primary" >Add Book</a>
+        </div>
+
+    </div>
+</form>
+
+</html>
