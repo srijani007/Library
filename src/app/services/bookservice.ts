@@ -7,14 +7,14 @@ import { Book } from "../models/bookmodel";
 
 })
 export class BooksService{
-    baseUrl ='https://localhost:7006/Book/AddBooks';
-    bookUrl ='https://localhost:7006/Book/GetBooks';
-    conditions ='https://localhost:7267/Reader/BasedonCriteria '
+    baseUrl ='https://localhost:7275/Book/AddBooks';
+    bookUrl ='https://localhost:7275/Book/GetBooks';
+    conditions ='https://localhost:7163/Reader/BasedonCriteria '
     constructor(private http: HttpClient){}
 
  //add Books 
   Addbooks(book : Book):Observable<Book[]> {
-     // detail. = '00000000-0000-0000-0000-000000000000';
+     console.log(localStorage.getItem("token"))
      return this.http.post<Book[]>(this.baseUrl, book,{
         headers: new HttpHeaders
         ({

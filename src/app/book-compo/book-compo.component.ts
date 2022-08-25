@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../services/bookservice';
 import { Book } from '../models/bookmodel';
+ import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-book-compo',
   templateUrl: './book-compo.component.html',
@@ -24,7 +26,7 @@ export class BookCompoComponent implements OnInit {
   }
 
   
-  constructor(private bookservice :BooksService) {
+  constructor(private bookservice :BooksService,private router:Router) {
 
    }
 
@@ -33,9 +35,11 @@ export class BookCompoComponent implements OnInit {
 
   
   onSubmit(){
-    console.log(localStorage.getItem("token"))
+   
     this.bookservice.Addbooks(this.book).subscribe(
-      response =>{console.log(response)}
+      response =>{console.log(response)
+      this.router.navigate(['/author-books-comp'])
+      }
     );
   } 
 

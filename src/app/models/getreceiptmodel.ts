@@ -1,3 +1,3 @@
 export interface receipt{
-    BuyerEmail:string
+    BuyerEmail:string | null
 }

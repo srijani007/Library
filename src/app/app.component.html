@@ -1,26 +1,49 @@
-<div id="app">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a href="#" class="navbar-brand">Digitals Book</a>
-      <ul class="navbar-nav mr-auto" routerLinkActive="active">
-        <li class="nav-item">
-          <a href='/home-comp' class="nav-link" routerLink="home-comp">Home </a>
-        </li>
-       
-      </ul>
-      <ul class="navbar-nav ml-auto" *ngIf="!isSignIn">
+<div id="app wrapper" width="80%">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Digital Book</a>
+    <ul class="navbar-nav-auto" routerLinkActive="active"></ul>
+
+    <div *ngIf="detailsexists() == '' || detailsexists() == null" class="collapse navbar-collapse"
+      id="navbarResponsive" >
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a href='userDetails-comp' class="nav-link" routerLink="userDetails-comp">Sign Up</a>
         </li>
         <li class="nav-item">
-            <a href='book-compo' class="nav-link" routerLink="book-compo">Add Book</a>
-          </li>
-        <li class="nav-item">
           <a href='signin-comp' class="nav-link" routerLink="signin-comp">Sign In</a>
         </li>
       </ul>
-      
-    </nav>      
-    <div class="container">
-      <router-outlet></router-outlet>
     </div>
+    <div *ngIf="detailsexists() != '' || detailsexists() != null" class="collapse navbar-collapse"
+      id="navbarResponsive" >
+      <ul class="navbar-nav ms-auto">
+        <div *ngIf="isUserType() == 'author' || isUserType() == 'Author'">
+          <p class="nav-link py-3 px-0 px-lg-3 rounded ">Welcome {{userName}} !</p>
+          <!-- <li class="nav-item">
+            <a href='author-books-comp' class="nav-link" routerLink="author-books-comp">Authorbooks</a>
+          </li> -->
+          <li class="nav-item">
+            <a href='book-compo' class="nav-link" routerLink="book-compo">Add Book</a>
+          </li>
+          <li>
+            <a href='' class="nav-link" routerLink="" (click)="clearstorage()">Logout</a>
+          </li>
+        </div>
+        <div *ngIf="isUserType() == 'Reader' || isUserType() == 'reader'">
+          <div>
+            <p class="nav-link  ">Welcome {{userName}} !</p> 
+          </div>
+          <li class="nav-item">
+            <a href='getreciept-comp' class="nav-link" routerLink="getreciept-comp">Payment History</a>
+          </li>
+          <li>
+            <a href='' class="nav-link" routerLink="" (click)="clearstorage()">Logout</a>
+          </li>
+        </div>
+      </ul>
+    </div>  
+</nav>
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
+</div> 

@@ -4,10 +4,9 @@ import { Observable } from "rxjs";
 import { payment } from "../models/paymentmodel";
 @Injectable({
     providedIn: 'root'
-
 })
 export class PaymentService{
-    baseUrl ='https://localhost:7267/Reader/PurchaseBook';
+    baseUrl ='https://localhost:7163/Reader/PurchaseBook';
 
     constructor(private http: HttpClient){}
     

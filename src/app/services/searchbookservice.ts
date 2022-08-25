@@ -9,7 +9,7 @@ import { Bookcondtn } from "../models/booksearchmodel";
 
 })
 export class UserSignUpService{
-    baseUrl ='https://localhost:7267/Reader/BasedonCriteria';
+    baseUrl ='https://localhost:7163/Reader/BasedonCriteria';
    
     constructor(private http: HttpClient){}
 
@@ -18,9 +18,4 @@ export class UserSignUpService{
         //return this.getBooksList(searchUrl);
         return this.http.get<Bookcondtn>(searchUrl);
       }
-
-
-  //Get book by authorname
-//   getAllBooks():Observable<Bookcondtn[]>{
-//     return this.http.get<Bookcondtn[]>(this.baseUrl);
-  }
+ }

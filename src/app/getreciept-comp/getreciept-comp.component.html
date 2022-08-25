@@ -1,1 +1,45 @@
-<p>getreciept-comp works!</p>
+<html>
+<form>
+  <div class="container ">
+    <h1>Payment History</h1>
+    <br>
+    <hr>
+    <br>
+    <div>
+      <label for="name"><b>Buyer Email</b></label>
+      <input type="text" placeholder="Enter BuyerName" name="name" [(ngModel)]="history.BuyerEmail" required />
+      <br>
+      <br>
+      <div class="clearfix">
+        <a class="btn btn-primary" role="button" (click)="historyofPayments()" type="submit">Submit</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+</html>
+<!-- <div class =table-responsive>
+ <table class="table" *ngIf=''>
+  <thead>
+      <th><button class="btn btn-primary" (click)='hideAndshow()'>
+              {{showIcon? 'Hide':''}} Show logo</button>
+      </th>
+      <th> bookLogo</th>
+      <th> bookId </th>
+      <th> bookName </th>
+      <th> bookAuthor </th>
+      <th> boo</th>
+      <th> bookCategory</th>
+  </thead> 
+   <tbody> 
+      <tr *ngFor="let book of books">
+          <td><img *ngIf='showIcon' [src]="book.bookLogo" [title]="book.bookName" [style.width.px]="imgWidth"
+                  [style.margin.px]="imgMargin" /> </td>
+          <td>{{}}</td>
+          <td>{{book.bookName}}</td>
+          <td>{{book.bookAuthor}}</td>                    
+          <td>{{book.bookCategory}}</td>
+          <td >{{book.bookPrice}}<button class="btn btn-primary"(click)="GeneratePDF()" ><i class="fa fa-download"></i> Download<</i></button></td>
+      </tr> 
+  </tbody>
+</table> -->

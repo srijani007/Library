@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { userDetails } from '../models/usermodel';
 import { UserSignUpService } from '../services/authorService';
 
@@ -8,6 +9,7 @@ import { UserSignUpService } from '../services/authorService';
   styleUrls: ['./userDetails-comp.component.css']
 })
 export class UserDetailsCompComponent implements OnInit {
+  userlist: any[] | undefined;
   isSignedUp=false
   detail: userDetails = {
     UserId: 0,
@@ -17,21 +19,23 @@ export class UserDetailsCompComponent implements OnInit {
     UserRole: ''
   }
 
-  constructor(private userservice: UserSignUpService) { }
+  
+
+  constructor(private userservice: UserSignUpService,private router: Router) { }
 
   ngOnInit(): void {
   }
 
 
   onSubmit() {
+    
      this.userservice.signing_up(this.detail)
     .subscribe(
-       response => {console.log(response)
+       response => { console.log(response);
         this.isSignedUp=true;
-      }
+        this.router.navigate(['/signin-comp'])
+      });
    
-       
-    );
   }
 
 //  onSubmit() {

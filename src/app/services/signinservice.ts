@@ -7,14 +7,13 @@ import {token} from '../models/tokenmodel';
     providedIn: 'root'
 })
 export class AuthSignInService{
-    baseUrl ='https://localhost:7061/Authentication/Validate';
+    baseUrl ='https://localhost:7204/Authentication/SignIn';
     constructor(private http: HttpClient){}
 
-    token='';
+    token: any;
  //login call
  Validate(cred : signIncreds ):Observable<signIncreds[]>{
-     return this.http.post<signIncreds[]>(this.baseUrl, cred)
-    
+     return this.http.post<signIncreds[]>(this.baseUrl, cred)    
    }
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { payment } from '../models/paymentmodel';
 import {PaymentService} from'../services/buyBookservice';
-
+import { Router } from '@angular/router';
 //import * as pdfMake  from 'pdfmake/build/pdfmake'; 
 const pdfMake = require('pdfmake/build/pdfmake.js');
 import * as pdfFonts from "pdfmake/build/vfs_fonts"; 
@@ -20,12 +20,13 @@ export class PaymentCompComponent implements OnInit {
     BuyerName:'',
     BookId: 0
   }
-  constructor(private paymentservice :PaymentService) { }
+  
+  constructor(private paymentservice :PaymentService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  purchasedetails: any
+  purchasedetails: any//[] |undefined;
  
   generatePDF(action = "open") {
     let docDefinition = {  
@@ -78,15 +79,19 @@ export class PaymentCompComponent implements OnInit {
     }
 
   } 
-
+payment: string='false'
   onSubmit() {
-     this.generatePDF();
+  //   this.generatePDF();
+  console.log("Hi")
         this.paymentservice.Addpayment(this.purchase)
         .subscribe(
-          response => {            
-            console.log(this.purchasedetails=response);
-           
-            
+          response => {    console.log(response)         
+            this.purchasedetails=response;
+            console.log("test " + this.purchasedetails.result)           
+            this.router.navigate(['/getreciept-comp'])
+            console.log("in receipt")
+
+            //localStorage.setItem("buyermailId",this.purchase.BuyerEmail)         
           }
         )//this.showmsg true;
     }

@@ -8,7 +8,7 @@ import { userDetails}  from "../models/usermodel"
 
 })
 export class UserSignUpService{
-    baseUrl ='https://localhost:7140/Author/SignUp';
+    baseUrl ='https://localhost:7136/Author/SignUp';
     baseUrl1='';
     constructor(private http: HttpClient){}
 
@@ -20,7 +20,6 @@ getAllUsers():Observable<userDetails[]>{
 
  //to add users to db
  signing_up(detail : userDetails):Observable<userDetails> {
-   // detail. = '00000000-0000-0000-0000-000000000000';
     return this.http.post<userDetails>(this.baseUrl, detail);
   }
   

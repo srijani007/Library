@@ -12,6 +12,10 @@ import { PaymentCompComponent } from './payment-comp/payment-comp.component';
 import { GetrecieptCompComponent } from './getreciept-comp/getreciept-comp.component';
 import { BooksearchCompComponent } from './booksearch-comp/booksearch-comp.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthorBooksCompComponent } from './author-books-comp/author-books-comp.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,8 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     HomeCompComponent,
     PaymentCompComponent,
     GetrecieptCompComponent,
-    BooksearchCompComponent
+    BooksearchCompComponent,
+    AuthorBooksCompComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,10 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     Ng2SearchPipeModule
     
   ],
-  providers: [],
+  providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

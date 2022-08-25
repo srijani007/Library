@@ -1,17 +1,8 @@
 <div class="card-row">
     <div class="card-row-details">
         <div class="table-responsive">
-            <nav>
-                <h5> Dynamic search results </h5>
-                <input class="form-label" type="text" name="Category" [(ngModel)]="Category" (ngModelChange)="search()"
-                    placeholder="Search by Category" size="50">
-                <input class="form-label" type="text" name="Price" [(ngModel)]="Price" (ngModelChange)="search()"
-                    placeholder="Search by Price" size="50">
-                <input class="form-label" type="text" name="AuthorName" [(ngModel)]="AuthorName"
-                    (ngModelChange)="search()" placeholder="Search by AuthorName" size="50" width="100%">
-            </nav>
             <div class="row row-cols-1 row-cols-md-4 gy-5 gx-0 ">
-                <div *ngFor="let item of Booklist">
+                <div *ngFor="let item of AuthorBooklist">
                     <div class="col ">
                         <div class="card" style="width: 17rem; height: 25rem;">
                             <img src="{{item.logo}}" class="card-img-top" width="100%" height="70%" object-fit="cover"
