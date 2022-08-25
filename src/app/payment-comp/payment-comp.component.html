@@ -8,13 +8,10 @@
         <input type="text" placeholder="Enter BuyerName" name="name" required [(ngModel)]="purchase.BuyerName" />
 
         <label for="email"><b>BuyerEmail</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="purchase.BuyerEmail" />
-
-        <label for="bookid"><b>BookId</b></label>
-        <input type="text" placeholder="Enter BookId" name="bookid" required [(ngModel)]="purchase.BookId" />
+        <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="purchase.BuyerEmail" />       
 
         <div class="clearfix">
-            <a (click)="onSubmit()" type="submit" class="btn btn-primary" >Submit</a>
+            <a (click)="onSubmit()" type="submit" class="btn btn-primary"  [routerLink]="['/paymenthistory-comp']">Submit</a>
         </div>
     </div>
 </form>

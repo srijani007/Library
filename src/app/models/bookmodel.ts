@@ -12,3 +12,7 @@ export interface Book{
     CreatedDate : Date;
     ModifiedDate : Date;
 }
+
+export interface Getbookbyid{
+    BookId: Number;
+}

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../models/bookmodel';
 import { BooksService } from '../services/bookservice';
 import { Router } from '@angular/router';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-home-comp',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomeCompComponent implements OnInit {
   Booklist: any[] | undefined;
+  listofbooks:any
   searchBook: Book[] = [];
   Category: any;
   Price: any;
@@ -19,16 +21,29 @@ export class HomeCompComponent implements OnInit {
   temp:any
   username: any | undefined;
   //usertype:any|undefined;
-  usertype=localStorage.getItem("role");
+  usertype=localStorage.getItem("userrole");
   constructor(private getbookservice: BooksService, private router: Router) { }
 
   ngOnInit(): void {
     this.getbookservice.getAllBooks()
       .subscribe(
-        response => { this.Booklist = response }
+        response => { this.Booklist = response  
+        }
       );
   }
-// bookid:any
+
+  proceedpayment(item: any){
+console.log(item)
+          localStorage.setItem("BookId",item.bookId);
+          localStorage.setItem("BookTitle",item.title);
+          localStorage.setItem("BookLogo",item.logo);
+          localStorage.setItem("BookPrice",item.price);
+          localStorage.setItem("BookContent", item.content);
+          console.log(localStorage.getItem('BookPrice'));
+          console.log(localStorage.getItem('BookTitle'));
+          this.router.navigate(['/payment-comp']);
+  }
+// bookid:any()
 // bookname:any
 //   ProceedPayment(item: any){
 //     this.bookid=item.bookid;

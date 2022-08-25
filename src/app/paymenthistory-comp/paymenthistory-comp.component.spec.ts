@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GetrecieptCompComponent } from './getreciept-comp.component';
+import { PaymenthistoryCompComponent } from './paymenthistory-comp.component';
 
-describe('GetrecieptCompComponent', () => {
-  let component: GetrecieptCompComponent;
-  let fixture: ComponentFixture<GetrecieptCompComponent>;
+describe('PaymenthistoryCompComponent', () => {
+  let component: PaymenthistoryCompComponent;
+  let fixture: ComponentFixture<PaymenthistoryCompComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GetrecieptCompComponent ]
+      declarations: [ PaymenthistoryCompComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GetrecieptCompComponent);
+    fixture = TestBed.createComponent(PaymenthistoryCompComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,12 +4,15 @@ import { Observable } from "rxjs";
 import { userDetails}  from "../models/usermodel"
 import { receipt } from "../models/getreceiptmodel";
 import { Bookcondtn } from "../models/booksearchmodel";
+import {Getbookbyid} from  "../models/bookmodel";
 @Injectable({
     providedIn: 'root'
 
 })
 export class UserSignUpService{
     baseUrl ='https://localhost:7163/Reader/BasedonCriteria';
+
+    
    
     constructor(private http: HttpClient){}
 
@@ -18,4 +21,6 @@ export class UserSignUpService{
         //return this.getBooksList(searchUrl);
         return this.http.get<Bookcondtn>(searchUrl);
       }
+
+    
  }

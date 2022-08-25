@@ -21,7 +21,7 @@
                                 <h5 class="card-title">BookId:{{item.bookId}}</h5>
                                 <!-- <button class="btn btn-primary " (click)="routetopayment('/payment-comp')"{{item.bookId}} >Buy Book </button> -->
                                 <!-- <a class="nav-link "href="#"  >Buy Book</a>  -->
-                                <button class="btn btn-primary" [routerLink]="['/payment-comp']">Buy Book</button>
+                                <button class="btn btn-primary" (click)="proceedpayment(item)">Buy Book</button>
                             </div>
                         </div>
                     </div>

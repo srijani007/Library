@@ -31,6 +31,8 @@ decodedtoken:any
 tokenPayload:any
 
   onSubmit() {
+    console.log(this.cred.UserName)
+    console.log(this.cred.UserPass)
     if (this.cred.UserName != '' && this.cred.UserPass != '') {
       this.signinservice.Validate(this.cred)
         .subscribe(
@@ -50,6 +52,7 @@ tokenPayload:any
             }
             
           },error =>{
+            
             this.isSignIn=false
             this.isFailed=true
             console.log("Login Failed")}
