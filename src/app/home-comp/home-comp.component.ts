@@ -19,9 +19,11 @@ export class HomeCompComponent implements OnInit {
   lowerValue: any;
   higherValue: any;
   temp:any
+ 
   username: any | undefined;
   //usertype:any|undefined;
   usertype=localStorage.getItem("userrole");
+  tempFilterSearch: any;
   constructor(private getbookservice: BooksService, private router: Router) { }
 
   ngOnInit(): void {
@@ -43,7 +45,7 @@ console.log(item)
           console.log(localStorage.getItem('BookTitle'));
           this.router.navigate(['/payment-comp']);
   }
-  
+
   routetopayment(pagename: string) {
     this.router.navigate([`${pagename}`]);
   }
@@ -71,8 +73,8 @@ console.log(item)
       })
     }
   }
-}
-  /////////////////////////////////////////////////////////////////////////////////////
+
+  // /////////////////////////////////////////////////////////////////////////////////////
   // searchPrice($event: { target: { value: string; }; }) {
   //   this.Price = $event.target.value.split("-");
   //   this.lowerValue = this.Price[0];
@@ -83,12 +85,12 @@ console.log(item)
   
   // applyFilters() {
   //   if (this.Category == null) {
-  //      temp = temp.filter((res) => {
+  //      this.temp = this.temp.filter((res:any) => {
   //       if ((Number(res.price1)) >= (Number(this.lowerValue)) && (Number(res.price1)) <= (Number(this.higherValue)))
   //         return res.price1.toLocaleLowerCase();
   //     });
   //   } else if (this.Category != null) {
-  //     temp = temp.filter((res) => {
+  //     this.temp = this.temp.filter((res:any) => {
   //       if ((Number(res.price1)) >= (Number(this.lowerValue))
   //         && (Number(res.price1)) <= (Number(this.higherValue))) {
   //         return res.price1.toLocaleLowerCase();
@@ -96,7 +98,8 @@ console.log(item)
   //     })
   //   }
 
-  //   this.tempFilterSearch = temp;
+  //   this.tempFilterSearch = this.temp;
   // }
   ////////////////////////////////////////////////////////////////////////////////////////
 
+}
