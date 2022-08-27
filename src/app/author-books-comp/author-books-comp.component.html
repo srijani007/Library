@@ -1,18 +1,16 @@
-<div class="card-row">
+ <div class="card-row">
     <div class="card-row-details">
         <div class="table-responsive">
             <div class="row row-cols-1 row-cols-md-4 gy-5 gx-0 ">
                 <div *ngFor="let item of AuthorBooklist">
                     <div class="col ">
-                        <div class="card" style="width: 17rem; height: 25rem;">
-                            <img src="{{item.logo}}" class="card-img-top" width="100%" height="70%" object-fit="cover"
-                                alt="...">
+                        <div class="card">
+                            <img src="{{item.logo}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Title:{{item.title}}</h5>
                                 <h5 class="card-title">BookId:{{item.bookId}}</h5>
-                                <!-- <button class="btn btn-primary " (click)="routetopayment('/payment-comp')"{{item.bookId}} >Buy Book </button> -->
-                                <!-- <a class="nav-link "href="#"  >Buy Book</a>  -->
-                                <button class="btn btn-primary" [routerLink]="['/book-compo',item.bookId]">Update Book</button>
+                                <button class="btn btn-primary btn-sm" [routerLink]="['/book-compo',item.bookId]">Update Book</button>
+                                <br>
                                 <button class="btn btn-primary" (click)="ViewContent(item.bookId)">View Content</button>
                             </div>
                         </div>
@@ -21,4 +19,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
