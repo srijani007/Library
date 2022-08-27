@@ -10,12 +10,13 @@ import { PaymenthistoryCompComponent } from './paymenthistory-comp/paymenthistor
 
 const routes: Routes = [{path: 'signin-comp', component: SigninCompComponent},
  {path:'userDetails-comp',component:UserDetailsCompComponent},
-  {path:'book-compo',component:BookCompoComponent},
+{path:'book-compo',component:BookCompoComponent},
 {path:'home-comp',component:HomeCompComponent},
 {path:'payment-comp',component:PaymentCompComponent},
 {path:'',component:HomeCompComponent},
 {path:'author-books-comp',component:AuthorBooksCompComponent},
-{path:'paymenthistory-comp',component:PaymenthistoryCompComponent}
+{path:'paymenthistory-comp',component:PaymenthistoryCompComponent},
+{path:'book-compo/:bookId',component:BookCompoComponent}
 ];
 
 @NgModule({

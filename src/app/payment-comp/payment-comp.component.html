@@ -8,10 +8,26 @@
         <input type="text" placeholder="Enter BuyerName" name="name" required [(ngModel)]="purchase.BuyerName" />
 
         <label for="email"><b>BuyerEmail</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="purchase.BuyerEmail" />       
+        <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="purchase.BuyerEmail" />
 
         <div class="clearfix">
-            <a (click)="onSubmit()" type="submit" class="btn btn-primary"  [routerLink]="['/paymenthistory-comp']">Submit</a>
+            <a (click)="onSubmit()" type="submit" class="btn btn-primary"
+                 >Submit</a>  
+        </div>                  
+        <div class="row" style="align-items: right;" *ngIf="bought">
+            <div class="col-md-12">
+                <p class="alert alert-danger">
+                    <strong>Books has already bought!</strong>
+                </p>
+            </div>  
+        </div>   
+        <div class="row" style="align-items: right;" *ngIf="notbought">
+            <div class="col-md-12">
+                <p class="alert alert-success">
+                    <strong>Payment Successful!</strong>
+                </p>
+                <a [routerLink]="['/paymenthistory-comp']"></a>
+            </div>
         </div>
     </div>
 </form>

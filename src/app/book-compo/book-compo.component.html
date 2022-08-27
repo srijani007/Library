@@ -1,12 +1,12 @@
 <html>
 <!-- <form> action="action_page.php" style="border:1px solid #ccc"> -->
-    <form>
+<form>
     <div class="container">
         <h1>Books</h1>
         <hr>
 
         <label for="name"><b>Title</b></label>
-        <input type="text" placeholder="Enter BookName" name="name" required [(ngModel)]="book.title" />
+        <input type="text" placeholder="Enter BookName" name="name" required [(ngModel)]="book.Title" />
 
         <label for="Author"><b>AuthorName</b></label>
         <input type="text" placeholder="Enter AuthorName" name="Author" required [(ngModel)]="book.AuthorName" />
@@ -38,8 +38,19 @@
         </select>
         <br>
         <br>
-        <div class="clearfix">
-            <a (click)="onSubmit()" type="submit" class="btn btn-primary" >Add Book</a>
+        <label for="active"><b>Book Status</b></label>
+        <select name="active" id="Active" [(ngModel)]="book.Active">
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+       </select>
+        <br>
+        <br>
+
+        <div *ngIf="addbtn" class="clearfix">
+            <a class="btn btn-primary" type="submit" (click)="onSubmit()">Add Book</a>
+        </div>
+        <div *ngIf="updatebtn" class="clearfix">
+            <a class="btn btn-primary" type="submit" (click)="onUpdate()">Update Book</a>
         </div>
 
     </div>

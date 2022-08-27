@@ -1,14 +1,14 @@
 export interface Book{
     BookId: Number;
     Logo : string ;
-    title : string;
+    Title : string;
     Category : string;
     Price : Number;
     AuthorName : string;
     Publisher : string;
     PublishedDate : Date;
     Content : string;
-    Active : boolean;
+    Active : string;
     CreatedDate : Date;
     ModifiedDate : Date;
 }

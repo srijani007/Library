@@ -21,6 +21,9 @@ export class AuthorBooksCompComponent implements OnInit {
     this.authbookservice.getAuthorBooks(this.authbooklist)
       .subscribe(
         response => { this.AuthorBooklist = response }
-      );
-  }  
+      );}
+  
+      // onDelete(item.bookId){
+
+      // }
 }
