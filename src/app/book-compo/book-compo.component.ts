@@ -40,7 +40,6 @@ isAddMode: boolean =false;
    ngOnInit(): void {
     this.id = this.activatedroute.snapshot.params['bookId']
     console.log(this.id)
-    this.isAddMode = !this.id
     this.getbookdetailsbyId(this.id)
     if(this.id != undefined){
       this.updatebtn= true
@@ -97,16 +96,5 @@ onUpdate(){
         }
         
         )}
-
-// onDelete(){
-//   this.bookservice.updateBookbtId(this.book).subscribe(
-//     response=>{
-//       console.log(response)
-//       this.router.navigate(['/author-books-comp'])
-//         },error =>{
-//           console.log(error)
-//         }
-        
-//         )}
 
 }

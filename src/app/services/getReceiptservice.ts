@@ -13,7 +13,7 @@ export class ReceiptbyEmailService{
    
     constructor(private http: HttpClient){}
 
-getPaymentdetails(history:receipt):Observable<receipt[]>{
+    getPaymentdetails(history:receipt):Observable<receipt[]>{
     return this.http.post<receipt[]>(this.baseUrl,history);}
 
     Getbookbyid(idbook: any): Observable<Getbookbyid[]>{

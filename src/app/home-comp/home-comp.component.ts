@@ -43,16 +43,7 @@ console.log(item)
           console.log(localStorage.getItem('BookTitle'));
           this.router.navigate(['/payment-comp']);
   }
-
-  //need to check
-// bookid:any()
-// bookname:any
-//   ProceedPayment(item: any){
-//     this.bookid=item.bookid;
-//     localStorage.setItem('idbook',this.bookid)
-//     this.bookname=item.bookname;
-//     this.router.navigate(['/getreciept'])
-//   }
+  
   routetopayment(pagename: string) {
     this.router.navigate([`${pagename}`]);
   }

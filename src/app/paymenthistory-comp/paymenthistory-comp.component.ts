@@ -19,10 +19,9 @@ export class PaymenthistoryCompComponent implements OnInit {
   title:any
   justcontent:any
   ifhide:boolean =true
-   history:receipt={
+  history:receipt={
   BuyerEmail:localStorage.getItem('BookbuyermailId')
  } 
- usermailid=''
  idbook:Getbookbyid={
   BookId:0
  }
@@ -31,55 +30,66 @@ buyermail:any
   constructor(private getReceiptservice:ReceiptbyEmailService, private router:Router ) { }
 
   ngOnInit(): void {
-   
-this.usermailid=localStorage.getItem('BookbuyermailId') || ''
 this.historyofPayments()
   }
 
   historyofPayments(){
-    console.log(localStorage.getItem('BookbuyermailId'))
-    console.log(this.history)
-    this.getReceiptservice.getPaymentdetails(this.history)
-        .subscribe(
-          response => { this.receipts=response 
+    if(localStorage.getItem('Mailid'))
+    {
+      console.log('paymenthistory')
+      this.history.BuyerEmail=localStorage.getItem('Mailid')
+      console.log('aftergetting')
+      console.log(this.history)         
+        this.getReceiptservice.getPaymentdetails(this.history).subscribe(
+          response => { 
+            this.receipts=response 
             console.log( response)
-            
-          }         
-        );
-        }
+            });
+         }
+    else {
+      console.log(localStorage.getItem('BookbuyermailId'))
+      console.log(this.history)
+      this.getReceiptservice.getPaymentdetails(this.history)
+          .subscribe(
+            response => { this.receipts=response 
+              console.log( response)
+              });}
+    }
 
-        generatePDF(action = "open",item:any) {
-          let docDefinition = {  
-            content: [  
-                // Previous configuration  
-                {  
-                    text: 'Customer Details',  
-                    style: 'sectionHeader'  
-                }  ,
-                {  
-                  columns: [                  
-                      [  
-                          {  
-                              text: `Date: ${item.paymentDate}`,  
-                              alignment: 'right'  
-                          },  
-                          {  
-                              text: `Bill No : ${item.paymentId}`,  
-                              alignment: 'right'  
-                          }  
-                      ]  
+
+  generatePDF(action = "open",item:any) {
+    let docDefinition = {  
+      content: [  
+        // Previous configuration  
+          {  
+           text: 'Customer Details',  
+           style: 'sectionHeader'  
+          }  ,
+          {  
+           columns: [                  
+              [  
+                 {  
+                   text: `Date: ${item.paymentDate}`,  
+                   alignment: 'right'  
+                  },  
+                  {  
+                   text: `Bill No : ${item.paymentId}`,  
+                   alignment: 'right'  
+                  }  
                   ]  
-                },{
-                table: {  
-                  headerRows: 1,  
-                  widths: ['*', 'auto', 'auto','auto','auto'],  
-                  body: [  
-                      ['Buyer Name', 'Buyer Email', 'BookId','Title','Price'],  
-                      [item.buyerName,item.buyerEmail,item.bookId
-                      ,item.title,item.price]
-                    ]  
-                 } 
-             }
+                ]  
+          },
+          {
+            table: {  
+            headerRows: 1,  
+            widths: ['*', 'auto', 'auto','auto','auto'],  
+            body: [  
+            ['Buyer Name', 'Buyer Email', 'BookId','Title','Price'],  
+            [item.buyerName,item.buyerEmail,item.bookId
+            ,item.title,item.price]
+            ]  
+            } 
+          }
             ],  
             styles: {  
                 sectionHeader: {  
@@ -101,8 +111,7 @@ this.historyofPayments()
       
         } 
        
-     viewcontent(id: any){ 
-      
+     viewcontent(id: any){       
       this.idbook.BookId = id
           this.getReceiptservice.Getbookbyid(this.idbook)
     .subscribe(
@@ -154,4 +163,8 @@ this.historyofPayments()
         }
     
       } 
+
+  
+      
+    
 }
