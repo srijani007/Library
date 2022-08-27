@@ -17,7 +17,7 @@ export class PaymentCompComponent implements OnInit {
     BookId:parseInt(localStorage.getItem('BookId') || "0"),
     Title:localStorage.getItem('BookTitle') || '',
     Logo:localStorage.getItem('BookLogo') || '',
-    Price:localStorage.getItem('BookPrice') || ''
+    Price:localStorage.getItem('BookPrice') || '',
   }
   
   constructor(private paymentservice :PaymentService,public router:Router) { }
@@ -27,7 +27,7 @@ export class PaymentCompComponent implements OnInit {
 
   purchasedetails: any;
   bought: boolean=false;
-  notbought:boolean=true;
+  notbought:boolean=false;
  
   onSubmit() {
     console.log(this.purchase)
@@ -44,6 +44,7 @@ export class PaymentCompComponent implements OnInit {
                 this.bought=true;
                 this.notbought=false;
                 console.log(this.bought)
+                // need to check this as well
             }
             else{
               this.bought=false;
@@ -56,6 +57,25 @@ export class PaymentCompComponent implements OnInit {
             // console.log(localStorage.getItem('BookTitle'));
                
           }
+         
         )
-    }  
+    } 
+    // failedbtn:boolean=false
+    // successbtn:boolean=false
+    back(){
+      console.log(this.purchasedetails.result)
+      if(this.purchasedetails.result === 'Book has already bought')
+      {
+      //   this.failedbtn=true
+      //   this.successbtn=false
+        this.router.navigate(['/home-comp'])
+      }
+      else
+      {
+        this.router.navigate(['/paymenthistory-comp'])
+        // this.failedbtn=false
+        // this.successbtn=true        
+      }
+      
+    } 
 }

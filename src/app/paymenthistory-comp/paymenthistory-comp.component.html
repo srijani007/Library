@@ -1,6 +1,6 @@
 <html>
 <form>
-    <div *ngIf="ifhide" class="container ">
+    <div  class="container ">
         <h1>Payment History</h1>
         <div class="row row-cols-1 row-cols-md-4 gy-5 gx-0 ">
             <div *ngFor="let item of receipts">
@@ -21,37 +21,5 @@
             </div>
         </div>
     </div>
-    <div >
-        <p >
-            {{justcontent}}
-            <!-- <button class="btn btn-primary btn-sm endbutton" href="['/paymenthistory-comp']">Back</button> -->
-        </p>
-    </div>
 </form>
-
 </html>
-<!-- <div class =table-responsive>
-     <table class="table" *ngIf=''>
-      <thead>
-          <th><button class="btn btn-primary" (click)='hideAndshow()'>
-                  {{showIcon? 'Hide':''}} Show logo</button>
-          </th>
-          <th> bookLogo</th>
-          <th> bookId </th>
-          <th> bookName </th>
-          <th> bookAuthor </th>
-          <th> boo</th>
-          <th> bookCategory</th>
-      </thead> 
-       <tbody> 
-          <tr *ngFor="let book of books">
-              <td><img *ngIf='showIcon' [src]="book.bookLogo" [title]="book.bookName" [style.width.px]="imgWidth"
-                      [style.margin.px]="imgMargin" /> </td>
-              <td>{{}}</td>
-              <td>{{book.bookName}}</td>
-              <td>{{book.bookAuthor}}</td>                    
-              <td>{{book.bookCategory}}</td>
-              <td >{{book.bookPrice}}<button class="btn btn-primary"(click)="GeneratePDF()" ><i class="fa fa-download"></i> Download<</i></button></td>
-          </tr> 
-      </tbody>
-    </table> -->

@@ -16,11 +16,13 @@ import {Getbookbyid} from '../models/bookmodel'
 export class PaymenthistoryCompComponent implements OnInit {
   receipts: any[] | undefined;
   Bookcontent: any
+  title:any
   justcontent:any
   ifhide:boolean =true
    history:receipt={
-  BuyerEmail:localStorage.getItem('mailIdbuyer')
+  BuyerEmail:localStorage.getItem('BookbuyermailId')
  } 
+ usermailid=''
  idbook:Getbookbyid={
   BookId:0
  }
@@ -29,7 +31,9 @@ buyermail:any
   constructor(private getReceiptservice:ReceiptbyEmailService, private router:Router ) { }
 
   ngOnInit(): void {
-    this.historyofPayments()
+   
+this.usermailid=localStorage.getItem('BookbuyermailId') || ''
+this.historyofPayments()
   }
 
   historyofPayments(){
@@ -104,11 +108,50 @@ buyermail:any
     .subscribe(
        response => { console.log(response);
         this.Bookcontent=response
+        this.title = this.Bookcontent.content[0].title
         this.justcontent=this.Bookcontent.content[0].content
         console.log(this.Bookcontent.content[0].content)
         this.ifhide=false
+        this.viewcontentofbook('open',this.justcontent,this.title)
        // this.router.navigate(['/signin-comp'])
-      });
-          
+      });}
+
+      viewcontentofbook(action = "open",content :any, title:any) {
+        let docDefinition = {  
+          content: [  
+              // Previous configuration  
+              {  
+                  text: title,  
+                  style: 'sectionHeader'  
+              }  ,
+              {  
+                columns: [                  
+                    [  
+                        {  
+                            text: `Content: ${content}`  
+                           // alignment: 'right'  
+                        }                            
+                    ]  
+                ]  
+              }
+          ],  
+          styles: {  
+              sectionHeader: {  
+                  bold: true,  
+                  decoration: 'underline',  
+                  fontSize: 14,  
+                  margin: [0, 15, 0, 15]  
+              }  
+          }  
+      }
+    
+        if(action==='download'){
+          pdfMake.createPdf(docDefinition).download();
+        }else if(action === 'print'){
+          pdfMake.createPdf(docDefinition).print();      
+        }else{
+          pdfMake.createPdf(docDefinition).open();      
         }
+    
+      } 
 }

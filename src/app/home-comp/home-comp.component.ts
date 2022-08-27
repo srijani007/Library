@@ -43,6 +43,8 @@ console.log(item)
           console.log(localStorage.getItem('BookTitle'));
           this.router.navigate(['/payment-comp']);
   }
+
+  //need to check
 // bookid:any()
 // bookname:any
 //   ProceedPayment(item: any){

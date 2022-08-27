@@ -13,7 +13,12 @@
         <div class="clearfix">
             <a (click)="onSubmit()" type="submit" class="btn btn-primary"
                  >Submit</a>  
-        </div>                  
+        </div> 
+        <br>
+        <div class="clearfix">
+            <a (click)="back ()" type="submit" class="btn btn-primary"
+                 >Back</a>  
+        </div>                        
         <div class="row" style="align-items: right;" *ngIf="bought">
             <div class="col-md-12">
                 <p class="alert alert-danger">
@@ -26,7 +31,7 @@
                 <p class="alert alert-success">
                     <strong>Payment Successful!</strong>
                 </p>
-                <a [routerLink]="['/paymenthistory-comp']"></a>
+                <a  href="['/paymenthistory-comp']"></a>
             </div>
         </div>
     </div>
