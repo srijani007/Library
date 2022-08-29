@@ -10,7 +10,7 @@ import {Getbookbyid} from  "../models/bookmodel";
 
 })
 export class UserSignUpService{
-    baseUrl ='https://localhost:7163/Reader/BasedonCriteria';
+    baseUrl ='https://readerapi20220829070218.azurewebsites.net/Reader/BasedonCriteria';
 
     
    
@@ -18,7 +18,6 @@ export class UserSignUpService{
 
     searchBooks(keyword: string): Observable<Bookcondtn>{
         const searchUrl = `${this.baseUrl}/category=${keyword}`;
-        //return this.getBooksList(searchUrl);
         return this.http.get<Bookcondtn>(searchUrl);
       }
 

@@ -8,7 +8,7 @@ import {Authorbooks} from '../models/authordeatilsmodel';
 
 })
 export class AuthorBooksService{
-    baseUrl ='https://localhost:7275/book/GetBookbyName';
+    baseUrl ='https://bookapi20220829065620.azurewebsites.net/book/GetBookbyName';
     constructor(private http: HttpClient){}
 
 

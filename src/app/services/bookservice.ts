@@ -8,13 +8,18 @@ import { bookbyId } from "../models/bookbyId";
     providedIn: 'root'
 
 })
+
 export class BooksService {
-    baseUrl = 'https://localhost:7275/Book/AddBooks';
-    bookUrl = 'https://localhost:7275/Book/GetBooks';
-    conditions = 'https://localhost:7163/Reader/BasedonCriteria';
-    getbookbyid = 'https://localhost:7275/Book/GetDetailsbyId';
-    updatebook = 'https://localhost:7275/Book/UpdateBook';
-    deletebook ='';
+  
+    baseUrl = 'https://bookapi20220829065620.azurewebsites.net/Book/AddBooks';
+    bookUrl = 'https://bookapi20220829065620.azurewebsites.net/Book/GetBooks';
+    conditions = 'https://readerapi20220829070218.azurewebsites.net/Reader/BasedonCriteria';
+    getbookbyid = 'https://bookapi20220829065620.azurewebsites.net/Book/GetDetailsbyId';
+    updatebook = 'https://bookapi20220829065620.azurewebsites.net/Book/UpdateBook';
+
+
+
+
     constructor(private http: HttpClient) { }
 
     //add Books 

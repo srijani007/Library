@@ -7,7 +7,8 @@ import {token} from '../models/tokenmodel';
     providedIn: 'root'
 })
 export class AuthSignInService{
-    baseUrl ='https://localhost:7204/Authentication/SignIn';
+    baseUrl ='https://authenticationwebapi20220829062858.azurewebsites.net/Authentication/SignIn';
+    
     constructor(private http: HttpClient){}
 
     token: any;
@@ -15,7 +16,4 @@ export class AuthSignInService{
  Validate(cred : signIncreds ):Observable<signIncreds[]>{
      return this.http.post<signIncreds[]>(this.baseUrl, cred)    
    }
-
-
-
 }

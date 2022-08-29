@@ -8,11 +8,12 @@ import { userDetails}  from "../models/usermodel"
 
 })
 export class UserSignUpService{
-    baseUrl ='https://localhost:7136/Author/SignUp';
+    baseUrl ='https://authorapi20220829064540.azurewebsites.net/Author/SignUp';
+    
     baseUrl1='';
     constructor(private http: HttpClient){}
 
-//to get all users
+
 //Get all cards
 getAllUsers():Observable<userDetails[]>{
     return this.http.get<userDetails[]>(this.baseUrl1);

@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class SigninCompComponent implements OnInit {
   isSignIn:boolean =false;
   isFailed:boolean =false;
- //creds: signIncreds[] = [];
   cred: signIncreds = {
      UserName: "",
      UserPass: ""
@@ -46,9 +45,9 @@ tokenPayload:any
             this.GetTokenDecoded()
             console.log(this.userRole)
             if(this.userRole == "author" || this.userRole == "Author"){
-              this.router.navigate(['/author-books-comp'])  ///book -add ,book edit
+              this.router.navigate(['/author-books-comp'])
             }else{
-              this.router.navigate(['/home-comp']) //reader //search,payment
+              this.router.navigate(['/home-comp']) 
             }
             
           },error =>{
@@ -68,9 +67,7 @@ tokenPayload:any
     this.username=this.tokenPayload.UserName 
     localStorage.setItem('userrole',this.userRole)
     localStorage.setItem('username',this.username)
-    
-   // this.s=this.userRole.userRole
-   //.log("this.tokenPa")
+  
     console.log(localStorage.getItem('userrole'))
 
     console.log(this.username)

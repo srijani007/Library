@@ -8,8 +8,9 @@ import {Getbookbyid} from "../models/bookmodel"
 
 })
 export class ReceiptbyEmailService{
-    baseUrl ='https://localhost:7163/Reader/PaymentbyEmail';
-    booksearchid ='https://localhost:7275/Book/GetDetailsbyId'
+    baseUrl ='https://readerapi20220829070218.azurewebsites.net/Reader/PaymentbyEmail';
+    booksearchid ='https://bookapi20220829065620.azurewebsites.net/Book/GetDetailsbyId'
+
    
     constructor(private http: HttpClient){}
 

@@ -6,8 +6,8 @@ import { payment } from "../models/paymentmodel";
     providedIn: 'root'
 })
 export class PaymentService{
-    baseUrl ='https://localhost:7163/Reader/PurchaseBook';
-
+   
+   baseUrl ='https://readerapi20220829070218.azurewebsites.net/Reader/PurchaseBook';
     constructor(private http: HttpClient){}
     
 

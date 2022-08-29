@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bdf0d7d3-1b88-4788-a21d-67dd4e8e22f8/microsoft.web/sites/subscriptions/bdf0d7d3-1b88-4788-a21d-67dd4e8e22f8/resourceGroups/DigitalBooksApp/providers/Microsoft.Web/sites/digitalbookUI",
+    "appService.deploySubpath": "dist\\Library"
+}
