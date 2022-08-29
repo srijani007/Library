@@ -56,9 +56,12 @@ onclickofpayhistory()
   }
   else {
     this.router.navigate(['/paymenthistory-comp'])
-  }
-  
+  }  
 }
+
+
 }
+
+
 
 

@@ -60,7 +60,6 @@ console.log(item)
       })
     }
     if (this.Price != null) {
-      console.log("hi------")
       console.log(this.Price);
       this.Booklist = this.Booklist?.filter(res => {
         console.log(res.price);
@@ -72,34 +71,8 @@ console.log(item)
         return res.authorName.toLocaleLowerCase().match(this.AuthorName.toLocaleLowerCase());
       })
     }
-  }
+  } 
 
-  // /////////////////////////////////////////////////////////////////////////////////////
-  // searchPrice($event: { target: { value: string; }; }) {
-  //   this.Price = $event.target.value.split("-");
-  //   this.lowerValue = this.Price[0];
-  //   this.higherValue = this.Price[1];
-  //   this.applyFilters();
-  // }
-  // // PRICE
   
-  // applyFilters() {
-  //   if (this.Category == null) {
-  //      this.temp = this.temp.filter((res:any) => {
-  //       if ((Number(res.price1)) >= (Number(this.lowerValue)) && (Number(res.price1)) <= (Number(this.higherValue)))
-  //         return res.price1.toLocaleLowerCase();
-  //     });
-  //   } else if (this.Category != null) {
-  //     this.temp = this.temp.filter((res:any) => {
-  //       if ((Number(res.price1)) >= (Number(this.lowerValue))
-  //         && (Number(res.price1)) <= (Number(this.higherValue))) {
-  //         return res.price1.toLocaleLowerCase();
-  //       }
-  //     })
-  //   }
-
-  //   this.tempFilterSearch = this.temp;
-  // }
-  ////////////////////////////////////////////////////////////////////////////////////////
 
 }
