@@ -8,8 +8,13 @@ import { userDetails}  from "../models/usermodel"
 
 })
 export class UserSignUpService{
+<<<<<<< HEAD
     baseUrl ='https://authorapi20220829064540.azurewebsites.net/Author/SignUp';
     
+=======
+   // baseUrl ='https://authorapi20220828221604.azurewebsites.net/Author/SignUp';
+    baseUrl ='https://localhost:7136/Author/SignUp';
+>>>>>>> a011b5f6e9b02bce5c482619437fa8d2a0696b0d
     baseUrl1='';
     constructor(private http: HttpClient){}
 

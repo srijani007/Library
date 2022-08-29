@@ -10,7 +10,11 @@
       <li class="nav-item" *ngIf="detailsexists() == '' || detailsexists() == null">
         <a href='signin-comp' class="nav-link" routerLink="signin-comp">Sign In</a>
       </li>
+<<<<<<< HEAD
       <li class="nav-item" *ngIf="(detailsexists() == '' || detailsexists() == null ||isUserType() == '')">
+=======
+      <li class="nav-item" *ngIf="((detailsexists() == '' || detailsexists() == null))">
+>>>>>>> a011b5f6e9b02bce5c482619437fa8d2a0696b0d
         <a href='payment-comp' class="nav-link" routerLink="payment-comp">Guest</a>
       </li>
     </ul>
